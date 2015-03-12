@@ -31,7 +31,7 @@
 
     "shutdown_command": "echo 'vagrant'|sudo -S /sbin/halt -h -p",
 
-    "yum_proxy": "",
+    "yum_proxy": ""
   },
   {
     "type": "vmware-iso",
