@@ -1,4 +1,7 @@
 {
+  "variables": {
+    "yum_proxy": ""
+  },
   "builders": [{
     "type": "virtualbox-iso",
     "virtualbox_version_file": ".vbox_version",
@@ -29,9 +32,7 @@
       ["modifyvm", "{{.Name}}", "--cpus", "1"]
     ],
 
-    "shutdown_command": "echo 'vagrant'|sudo -S /sbin/halt -h -p",
-
-    "yum_proxy": ""
+    "shutdown_command": "echo 'vagrant'|sudo -S /sbin/halt -h -p"
   },
   {
     "type": "vmware-iso",
