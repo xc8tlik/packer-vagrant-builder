@@ -12,7 +12,7 @@
     "iso_checksum_type": "sha1",
 
     "boot_command": [
-      "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/centos-7.0-x86_64/ks.cfg<enter><wait>"
+      "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/centos-7.0-x86_64/ks.cfg yum_proxy={{user `yum_proxy`}}<enter><wait>"
     ],
     "boot_wait": "12s",
 
@@ -29,7 +29,9 @@
       ["modifyvm", "{{.Name}}", "--cpus", "1"]
     ],
 
-    "shutdown_command": "echo 'vagrant'|sudo -S /sbin/halt -h -p"
+    "shutdown_command": "echo 'vagrant'|sudo -S /sbin/halt -h -p",
+
+    "yum_proxy": "",
   },
   {
     "type": "vmware-iso",
